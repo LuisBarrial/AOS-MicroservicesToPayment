@@ -1,0 +1,28 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: #URL - Connect TO DB
+    username: #username-Connect TO DB
+    password: #passwd-Connect TO DB
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  eureka:
+    instance:
+      hostname: localhost
+    client:
+      server-url:
+        defaultZone: http://localhost:8761/eureka/
+stripe:
+  apikey: #stripe key
