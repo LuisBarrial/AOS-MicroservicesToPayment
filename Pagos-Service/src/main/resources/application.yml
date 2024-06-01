@@ -5,9 +5,9 @@ spring:
   application:
     name: payment-service
   datasource:
-    url: #URL - Connect TO DB
-    username: #username-Connect TO DB
-    password: #passwd-Connect TO DB
+    url: jdbc:mysql://iceqC1txptMkYmR.root@gateway01.us-east-1.prod.aws.tidbcloud.com:4000/test?sslMode=VERIFY_IDENTITY
+    username: iceqC1txptMkYmR.root
+    password: vSim6kq3agZIs0vR
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -25,4 +25,4 @@ spring:
       server-url:
         defaultZone: http://localhost:8761/eureka/
 stripe:
-  apikey: #stripe key
+  apikey: sk_test_51MOBvyG2gKdepiJhdKaTnAjv7OKWsrdli8WsRHMnRly3MwtPekVW26562EM9Nb2qhW9cOLRloUy3YNmX9BlBOX8P00Q5QoQnL4

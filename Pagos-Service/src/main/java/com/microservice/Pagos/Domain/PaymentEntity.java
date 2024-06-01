@@ -1,5 +1,6 @@
 package com.microservice.Pagos.Domain;
 
+import com.microservice.Pagos.Core.BaseAudit;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,7 +13,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @ToString
-public class PaymentEntity {
+public class PaymentEntity extends BaseAudit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

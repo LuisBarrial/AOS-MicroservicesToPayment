@@ -1,7 +1,7 @@
 package com.microservice.Pagos.Controller;
 
 import com.microservice.Pagos.Domain.PaymentEntity;
-import com.microservice.Pagos.Infrastructure.PaymentService;
+import com.microservice.Pagos.Domain.Infrastructure.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

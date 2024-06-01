@@ -1,4 +1,4 @@
-package com.microservice.Pagos.Infrastructure.DAO;
+package com.microservice.Pagos.Domain.Infrastructure.DAO;
 
 import com.microservice.Pagos.Domain.PaymentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

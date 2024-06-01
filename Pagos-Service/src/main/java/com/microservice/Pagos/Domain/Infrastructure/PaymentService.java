@@ -1,8 +1,8 @@
-package com.microservice.Pagos.Infrastructure;
+package com.microservice.Pagos.Domain.Infrastructure;
 
 import com.microservice.Pagos.Application.Repository.PaymentRepository;
 import com.microservice.Pagos.Domain.PaymentEntity;
-import com.microservice.Pagos.Infrastructure.DAO.PaymentDAO;
+import com.microservice.Pagos.Domain.Infrastructure.DAO.PaymentDAO;
 import com.stripe.Stripe;
 import com.stripe.model.PaymentIntent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,16 +29,20 @@ public class PaymentService implements PaymentRepository {
 
     @Override
     public PaymentEntity createPayment(PaymentEntity entity) {
-        List<String> paymentMethodTypes = new ArrayList<>();
-        paymentMethodTypes.add("card");
+        List<String> paymentMethodTypes = List.of("card");
+        int paymentPrice =(int)(Double.parseDouble(String.valueOf(entity.getPrice()))*100);
+        System.out.println(paymentPrice);
         Map<String, Object> params = new HashMap<>();
-        params.put("amount", entity.getPrice());
-        params.put("currency", "usd");
+        params.put("amount", paymentPrice);
+        params.put("currency", "pen");
+        params.put("customer", "cus_QBTxQy2Lgt6xAs"); // Asociar el PaymentIntent con el Customer existente
         params.put("payment_method_types", paymentMethodTypes);
+        params.put("payment_method","pm_card_visa");
 
         try{
-           var element = PaymentIntent.create(params);
+           var element = PaymentIntent.create(params).confirm();
            entity.setStripeId(element.getId());
+
         }
         catch (Exception e){
             throw new RuntimeException("Error al pagar en Stripe");
