@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="microservice-gateway" />
         <module name="Eureka-Server" />
-        <module name="Pagos-Service" />
         <module name="Order-Service" />
+        <module name="Pagos-Service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -18,6 +19,7 @@
       <module name="Eureka-Server" options="-parameters" />
       <module name="Order-Service" options="-parameters" />
       <module name="Pagos-Service" options="-parameters" />
+      <module name="microservice-gateway" options="-parameters" />
     </option>
   </component>
 </project>

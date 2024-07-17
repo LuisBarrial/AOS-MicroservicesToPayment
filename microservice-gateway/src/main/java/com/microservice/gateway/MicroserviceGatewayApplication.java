@@ -1,15 +1,15 @@
-package com.microservice.Order;
+package com.microservice.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication
 @EnableDiscoveryClient
-public class OrderServiceApplication {
+@SpringBootApplication
+public class MicroserviceGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrderServiceApplication.class, args);
+		SpringApplication.run(MicroserviceGatewayApplication.class, args);
 	}
 
 }

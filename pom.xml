@@ -21,6 +21,7 @@
     <module>Eureka-Server</module>
     <module>Pagos-Service</module>
     <module>Order-Service</module>
+    <module>microservice-gateway</module>
   </modules>
 
   <properties>

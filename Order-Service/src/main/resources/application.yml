@@ -1,18 +1,20 @@
 server:
   port: 8091
-
 spring:
   application:
+    zipkin: http://localhost:9411
     name: order-service
   datasource:
+    hikari:
+      max-lifetime: 1800000  # 30 minutos en milisegundos
     url: jdbc:mysql://iceqC1txptMkYmR.root@gateway01.us-east-1.prod.aws.tidbcloud.com:4000/test?sslMode=VERIFY_IDENTITY
     username: iceqC1txptMkYmR.root
-    password: vSim6kq3agZIs0vR
+    password: D4e4QjpKsX7k3gl7
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
